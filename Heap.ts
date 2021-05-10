@@ -41,10 +41,9 @@ class Heap<Type = number> {
       if (this.heap[targetIndex] < this.heap[leftChildIndex]) {
         nextIndex = leftChildIndex;
       }
-
-      let rightChildIndex = targetIndex * 2 + 1;
+      let rightChildIndex = targetIndex * 2 + 2;
       if (
-        this.heap[rightChildIndex] === undefined &&
+        this.heap[rightChildIndex] !== undefined &&
         this.heap[nextIndex] < this.heap[rightChildIndex]
       ) {
         nextIndex = rightChildIndex;
