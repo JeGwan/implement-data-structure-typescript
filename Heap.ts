@@ -1,5 +1,5 @@
-class Heap<Type = number> {
-  heap!: Type[];
+class Heap<ValueType = number> {
+  heap!: ValueType[];
   constructor() {
     this.heap = [];
   }
@@ -8,7 +8,7 @@ class Heap<Type = number> {
     this.heap[i] = this.heap[j];
     this.heap[j] = temp;
   }
-  add(value: Type) {
+  add(value: ValueType) {
     // 1. 힙의 끝에 원소를 삽입합니다.
     this.heap.push(value);
     // 2. 추가한 원소를 자신의 부모와 비교하고 부모가 가진 값이 더 작다면 서로 위치를 바꿉니다.
@@ -26,7 +26,7 @@ class Heap<Type = number> {
     // 1. 최대 원소를 가져옵니다.
     const max = this.heap[0];
     // 2. 마지막 자식을 꺼내 root node로 덮어 씌웁니다.
-    let last = this.heap.pop() as Type;
+    let last = this.heap.pop() as ValueType;
     if (this.heap.length === 0) return last;
     this.heap[0] = last;
 
